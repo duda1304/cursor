@@ -208,7 +208,7 @@ button:hover {
 }
 
 .cursor-light.click::after {
-    animation: circles 0.8s ease-in-out infinite;
+    animation: circles 0.8s ease-in-out;
 }
 
 .hover-over-me:hover ~ .cursor-light::after  {
@@ -235,6 +235,10 @@ button:hover {
         transform: translate(-50%, -50%) scale(10);
         background-color: transparent;
         border: 2px solid #66ccff;
+        box-shadow:
+        0 0 30px 15px #fff,  /* inner white */
+        0 0 50px 30px #f0f, /* middle magenta */
+        0 0 70px 45px #0ff; /* outer cyan */
     }
 }
 
