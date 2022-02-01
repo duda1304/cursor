@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Custom pointer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comforter&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+  <section class="container-fluid ">
+    <p>Custom cursors</p>
+    <div class='row m-0'>
+      <button id="cursor-circle" class="btn btn-dark me-3">Circle cursor</button>
+      <button id="cursor-square" class="btn btn-dark me-3">Square cursor</button>
+      <!-- <button id="cursor-light" class="btn btn-dark">Light cursor</button> -->
+    </div>
+    <p class='hover-over-me handwriten mt-5 ms-5'>Hover over me</p>
+    <p class='click-me handwriten'>Click me</p>
+    <div id="cursor" class="cursor-circle"></div>
+  </section>
+  <script src="./app.js"></script>
+</body>
+</html>

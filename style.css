@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    font-family: 'Zen Kurenaido', sans-serif;
+}
+
+section {
+    min-height: 100vh;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    font-size: 5em;
+    color: #333333;
+}
+
+.handwriten {
+    font-family: 'Comforter', cursive;
+    font-size: 0.5em;
+    width: fit-content;
+}
+
+button {
+    width: fit-content !important;
+}
+
+button:hover {
+    cursor: none;
+}
+
+/* CIRCLE CURSOR */
+
+.cursor-circle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.cursor-circle::before, .cursor-circle::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-circle.click::before {
+    animation: pulse 0.8s ease-in-out;
+}
+
+.hover-over-me:hover ~ .cursor-circle::before  {
+    content: '';
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
+
+.hover-over-me:hover ~ .cursor-circle::after {
+    content: '';
+    width: 2px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(5);
+    }
+}
+
+/* SQUARE CURSOR */
+
+.cursor-square {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.cursor-square::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 2px solid #66ccff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.cursor-square::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #212529;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-square.click::before {
+    animation: rotationRight 0.8s ease-in-out;
+}
+
+.cursor-square.click::after {
+    animation: rotationLeft 0.8s ease-in-out;
+}
+
+.hover-over-me:hover ~ .cursor-square::before  {
+    animation: squize 0.8s ease-in-out forwards;
+}
+
+.hover-over-me:hover ~ .cursor-square::after {
+   animation: color 0.8s ease-in-out forwards;
+}
+
+
+@keyframes rotationRight {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes rotationLeft {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes squize {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+@keyframes color {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: #212529;
+    }
+}
+
+
+/* LIGHT CURSOR */
+
