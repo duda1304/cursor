@@ -176,3 +176,65 @@ button:hover {
 
 /* LIGHT CURSOR */
 
+.cursor-light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.cursor-light::before {
+    content: '';
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 0px 2000px #212529;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-light::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-light.click::after {
+    animation: circles 0.8s ease-in-out infinite;
+}
+
+.hover-over-me:hover ~ .cursor-light::after  {
+    animation: grow 0.8s ease-in-out forwards;
+}
+
+@keyframes grow {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(5);
+        background-color: #66ccff;
+    }
+}
+
+@keyframes circles {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        background-color: transparent;
+        border: 2px solid #212529;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(10);
+        background-color: transparent;
+        border: 2px solid #66ccff;
+    }
+}
+
