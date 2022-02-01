@@ -24,6 +24,10 @@ section {
     width: fit-content;
 }
 
+small {
+    font-size: 0.3em;
+}
+
 button {
     width: fit-content !important;
 }
