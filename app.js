@@ -6,9 +6,15 @@ window.addEventListener('mousemove', (e) => {
     // cursor.setAttribute('fromTop', (cursor.offsetTop - scrollY));
 })
 
+// window.addEventListener('touchstart', (e) => {
+//     cursor.style.left = e.clientX + 'px';
+//     cursor.style.top = e.clientY + 'px';
+//     // cursor.setAttribute('fromTop', (cursor.offsetTop - scrollY));
+// })
+
 window.addEventListener('touchmove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
+    cursor.style.left = e.touches[0].clientX + 'px';
+    cursor.style.top = e.touches[0].clientY + 'px';
     // cursor.setAttribute('fromTop', (cursor.offsetTop - scrollY));
 })
 
