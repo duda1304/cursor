@@ -6,22 +6,17 @@ window.addEventListener('mousemove', (e) => {
     // cursor.setAttribute('fromTop', (cursor.offsetTop - scrollY));
 })
 
-// window.addEventListener('touchstart', (e) => {
-//     cursor.style.left = e.clientX + 'px';
-//     cursor.style.top = e.clientY + 'px';
-//     // cursor.setAttribute('fromTop', (cursor.offsetTop - scrollY));
-// })
-
 window.addEventListener('touchmove', (e) => {
     cursor.style.left = e.touches[0].clientX + 'px';
     cursor.style.top = e.touches[0].clientY + 'px';
-    // cursor.setAttribute('fromTop', (cursor.offsetTop - scrollY));
 })
 
+// No need to add scroll event if position of cursor is fixed, would be needed if position set as absolute
 // window.addEventListener('scroll', (e) => {
 //     const fromTop = parseInt(cursor.getAttribute('fromTop'));
 //     cursor.style.top = scrollY + fromTop + 'px';
 // })
+
 
 document.body.onload = () => {
     let buttons = Array.from(document.querySelectorAll('.btn'));
@@ -42,5 +37,13 @@ document.body.onload = () => {
             cursor.classList.remove('click');
         }
     }); 
+
+    // change text for mobile devices (no hover over effect)
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        // true for mobile device
+        document.querySelector('.hover-over-me').innerHTML = 'touch me to see animation';
+        document.querySelector('.click-me').innerHTML = 'touch me';
+        document.querySelector('#instruction').innerHTML = 'Choose cursor style and try to touch on two text elements below'
+      }
 }
 

@@ -7,6 +7,12 @@
 
 body {
     font-family: 'Zen Kurenaido', sans-serif;
+    max-height: 100vh;
+    width: 100%;
+    position: fixed;
+    /* prevent scrolling and hiding address bar on mobile */
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 section {
@@ -18,6 +24,12 @@ section {
     color: #333333;
 }
 
+@media only screen and (max-width: 920px) {
+    section {
+        font-size: 3em;
+    }
+  }
+
 .handwriten {
     font-family: 'Comforter', cursive;
     font-size: 0.5em;
@@ -26,6 +38,14 @@ section {
 
 small {
     font-size: 0.3em;
+}
+
+.hover-over-me {
+    margin-left: 10%;
+}
+
+.click-me {
+    margin-left: 45%;
 }
 
 button {
@@ -73,6 +93,28 @@ button:hover {
 }
 
 .hover-over-me:hover ~ .cursor-circle::after {
+    content: '';
+    width: 2px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
+
+.hover-over-me.hovered ~ .cursor-circle::before  {
+    content: '';
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
+
+.hover-over-me.hovered ~ .cursor-circle::after {
     content: '';
     width: 2px;
     height: 20px;
@@ -140,6 +182,13 @@ button:hover {
    animation: color 0.8s ease-in-out forwards;
 }
 
+.hover-over-me.hovered ~ .cursor-square::before  {
+    animation: squize 0.8s ease-in-out forwards;
+}
+
+.hover-over-me.hovered ~ .cursor-square::after {
+   animation: color 0.8s ease-in-out forwards;
+}
 
 @keyframes rotationRight {
     0% {
@@ -216,6 +265,10 @@ button:hover {
 }
 
 .hover-over-me:hover ~ .cursor-light::after  {
+    animation: grow 0.8s ease-in-out forwards;
+}
+
+.hover-over-me.hovered ~ .cursor-light::after  {
     animation: grow 0.8s ease-in-out forwards;
 }
 
