@@ -6,6 +6,12 @@ window.addEventListener('mousemove', (e) => {
     // cursor.setAttribute('fromTop', (cursor.offsetTop - scrollY));
 })
 
+window.addEventListener('touchmove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    // cursor.setAttribute('fromTop', (cursor.offsetTop - scrollY));
+})
+
 // window.addEventListener('scroll', (e) => {
 //     const fromTop = parseInt(cursor.getAttribute('fromTop'));
 //     cursor.style.top = scrollY + fromTop + 'px';
