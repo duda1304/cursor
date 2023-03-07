@@ -21,6 +21,9 @@ window.addEventListener('touchmove', (e) => {
 document.body.onload = () => {
     let buttons = Array.from(document.querySelectorAll('.btn'));
     buttons.forEach(button => button.addEventListener('click', (e) => {
+        let buttons = Array.from(document.getElementsByTagName('button'));
+        buttons.forEach(element => element.classList.remove('active'));
+        e.target.classList.add('active');
         let classes = Array.from(cursor.classList);
         classes.forEach(element => cursor.classList.remove(element));
         cursor.classList.add(e.target.id);

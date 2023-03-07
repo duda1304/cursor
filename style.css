@@ -52,6 +52,10 @@ button {
     width: fit-content !important;
 }
 
+button.active {
+    background-color: transparent !important;
+}
+
 button:hover {
     cursor: none;
 }
